@@ -5,7 +5,9 @@
     <classes>
       <class name="IntimeTestCases.loginTest">
         <methods>
+          <include name="closeBrowser"/>
           <include name="login"/>
+          <include name="launchBrowser"/>
         </methods>
       </class> <!-- IntimeTestCases.loginTest -->
     </classes>

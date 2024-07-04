@@ -5,32 +5,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import IntimePages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class baseClass 
-{
+
+public class baseClass {
 	public WebDriver d;
-	
+
 	@BeforeMethod
-	public void launchBrowser()
-	{		
+
+	public void launchBrowser() {
 		WebDriverManager.chromedriver().setup();
-		ChromeOptions op = new ChromeOptions();		
+		ChromeOptions op = new ChromeOptions();
+		//op.addArguments("headless");
 		d = new ChromeDriver(op);
-		d.get("http://192.168.1.100:8081/");	
-		//LoginPage lp = new LoginPage(d);
-		
+		d.get("http://192.168.1.100:8081/");
+		// LoginPage lp = new LoginPage(d);
+
 	}
-	
+
 	@AfterMethod
-	public void closeBrowser()
-	{
+	public void closeBrowser() {
 		d.close();
 	}
-	
-	
-	
+
 }
